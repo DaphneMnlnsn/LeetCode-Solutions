@@ -3,20 +3,22 @@ public class Solution {
         if(x < 0) return false;
         if(x == 0) return true;
 
-        List<int> numberList = [];
-
         int y = x;
+        int reversed = 0;
 
-        while(y > 0){
-            numberList.Add(y % 10);
-            y /= 10;
+        while(x > 0){
+            reversed = reversed * 10 + (x % 10);
+            x /= 10;
         }
 
-        int[] numberArray = numberList.ToArray();
-        long reversedNum = long.Parse(string.Concat(numberArray));
-
-        if(x != reversedNum){
-            return false;
+        while(y > 0){
+            if(y % 10 != reversed % 10) {
+                return false;
+            }
+            else{
+                y /= 10;
+                reversed /= 10;
+            }
         }
 
         return true;
