@@ -13,8 +13,9 @@ public class Solution {
         }
 
         int[] numberArray = numberList.ToArray();
+        long reversedNum = long.Parse(string.Concat(numberArray));
 
-        if(x != long.Parse(string.Concat(numberArray))){
+        if(x != reversedNum){
             return false;
         }
 
