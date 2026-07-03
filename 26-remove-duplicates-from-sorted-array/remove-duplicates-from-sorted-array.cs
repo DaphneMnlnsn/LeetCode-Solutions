@@ -3,11 +3,8 @@ public class Solution {
         int k = 0;
 
         for(int i = 0; i < nums.Length; i++){
-            for(int j = 0; j < nums.Length; j++){
+            for(int j = i+1; j < nums.Length; j++){
                 if(nums[i] == nums[j]){
-                    if(i == j){
-                        continue;
-                    }
                     nums[i] = int.MaxValue;
                 }
             }
