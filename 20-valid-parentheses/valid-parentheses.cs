@@ -1,12 +1,11 @@
 public class Solution {
     public bool IsValid(string s) {
-        char[] parentheses = s.ToArray();
         char[] opening = ['[','{','('];
         char[] closing = [']','}',')'];
         
         Stack<char> list = new Stack<char>();
 
-        foreach(char parenthesis in parentheses){
+        foreach(char parenthesis in s){
             if(opening.Contains(parenthesis)){
                 list.Push(parenthesis);
             }
