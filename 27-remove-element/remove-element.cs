@@ -3,16 +3,22 @@ public class Solution {
 
         int k = 0;
 
-        for(int i = 0; i < nums.Length; i++){
-            if(nums[i] == val){
-                nums[i] = int.MaxValue;
-            }
-            else{
-                k++;
-            }
+        foreach(int num in nums){
+            if(num != val) k++;
         }
+        
+        int unread = 0;
 
-        nums.Sort();
+        for(int i = 0; i < k; i++){
+            for(int j = unread; j < nums.Length; j++){
+                unread++;
+                if(nums[j] != val){
+                    nums[i] = nums[j];
+                    break;
+                }
+            }
+            
+        }
 
         return k;
     }
