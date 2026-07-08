@@ -8,7 +8,7 @@ public class Solution {
         if(haystackArray.Length < needleArray.Length) return index;
 
         for(int i = 0; i < haystackArray.Length; i++){
-            if(i > (haystackArray.Length - needleArray.Length)) break;
+            if(i > (haystackArray.Length - needleArray.Length) && index == -1) break;
 
             if(haystackArray[i] == needleArray[0] && index == -1){
                 index = i;
